@@ -1,12 +1,17 @@
-package server
+package main
 
 import (
+	api "calculator-grpc/api/proto"
 	"context"
-	api "google.golang.org/grpc/examples/calculator/api/proto"
 )
 
 type CalculatorGrpcServer struct {
 	api.UnimplementedCalculatorServer
+}
+
+func (s *CalculatorGrpcServer) mustEmbedUnimplementedCalculatorServer() {
+	//TODO implement me
+	panic("implement me")
 }
 
 func (s *CalculatorGrpcServer) Add(ctx context.Context, req *api.AddRequest) (*api.AddResponse, error) {

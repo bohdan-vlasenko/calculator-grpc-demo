@@ -1,6 +1,7 @@
 package main
 
 import (
+	api "calculator-grpc/api/proto"
 	"context"
 	"crypto/tls"
 	"crypto/x509"
@@ -8,7 +9,6 @@ import (
 	"fmt"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"
-	api "google.golang.org/grpc/examples/calculator/api/proto"
 	"log"
 	"os"
 	"strconv"

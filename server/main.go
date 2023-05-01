@@ -1,14 +1,13 @@
 package main
 
 import (
+	api "calculator-grpc/api/proto"
 	"crypto/tls"
 	"crypto/x509"
 	"flag"
 	"fmt"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"
-	api "google.golang.org/grpc/examples/calculator/api/proto"
-	"google.golang.org/grpc/examples/calculator/server"
 	"log"
 	"net"
 	"os"
@@ -51,7 +50,7 @@ func main() {
 
 	s := grpc.NewServer(grpc.Creds(tlsCredentials))
 
-	calculatorSrv := &server.CalculatorGrpcServer{}
+	calculatorSrv := &CalculatorGrpcServer{}
 	api.RegisterCalculatorServer(s, calculatorSrv)
 
 	flag.Parse()
